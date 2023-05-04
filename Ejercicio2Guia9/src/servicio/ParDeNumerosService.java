@@ -26,10 +26,11 @@ public class ParDeNumerosService {
     //} 
     
     
-    public static void mostrarValores(ParDeNumeros numero){
-              
-       System.out.println("Los numeros elegidos al azar son: " + numero.getNum1() + " y "+ numero.getNum2() );
-       
+    public static void mostrarValores(ParDeNumeros numero) {
+
+        System.out.println("Numero 1: " + numero.getNum1());
+        System.out.println("Numero 2: " + numero.getNum2());
+
     }
     
     //Método devolverMayor para retornar cuál de los dos atributos tiene el mayor valor
