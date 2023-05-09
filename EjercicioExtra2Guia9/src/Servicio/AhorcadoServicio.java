@@ -50,29 +50,42 @@ public class AhorcadoServicio {
     public void buscar(){
         System.out.println("Ingrese una letra");
         String letra = leer.next();
-        if(Arrays.asList(ahorcado.getaBuscar()).contains(letra)){
-            System.out.println("La letra pertenece a la palabra");
-        }else{
-            System.out.println("La letra no pertenece a la palabra");
+       
             encontradas(letra);
         }
         
-    }
-    
+        
     public boolean encontradas(String letra){
         boolean letraEncontrada = false;
-        int oportunidades = 0;
-        int encontradas = 0, faltantes = 0;
-        for (int i = 0; i < ahorcado.getaBuscar().length; i++) {
-            if (letra.equals(ahorcado.getaBuscar()[i])) {
-                ahorcado.setLetrasEncontradas(ahorcado.getLetrasEncontradas()+1);
-                letraEncontrada = true;
-            }else{
-                ahorcado.setJugadas(ahorcado.getJugadas()-1);
-                
-            }
-        }
+        
+       if(Arrays.asList(ahorcado.getaBuscar()).contains(letra)){
+            System.out.println("La letra pertenece a la palabra");
+            ahorcado.setLetrasEncontradas(ahorcado.getLetrasEncontradas()+1);
+            letraEncontrada = true;
+        }else{
+            System.out.println("La letra no pertenece a la palabra");
+            
+             ahorcado.setJugadas(ahorcado.getJugadas()-1);
+       }
+        
         return letraEncontrada;
+    }
+    
+    public void intentos(){
+        System.out.println("La cantidadf de jugadas que le quedan son " + ahorcado.getJugadas());
+    }
+    public void jugar(){
+        
+    }
+    public void juego(){
+        crearJuego();
+       
+        do{
+            buscar();
+            System.out.println("Te quedan " + ahorcado.getJugadas() + " intentos");
+            System.out.println("Tenes " + ahorcado.getLetrasEncontradas() + " letras encontradas");
+            
+        }while(ahorcado.getJugadas()>0 && ahorcado.getLetrasEncontradas()!= ahorcado.getaBuscar().length);
     }
 }
 

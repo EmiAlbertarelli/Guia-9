@@ -24,7 +24,7 @@ intentos. Este método se llamará en el main.
  */
 package ejercicioextra2guia9;
 
-import Entidades.Ahorcado;
+//import Entidades.Ahorcado;
 import Servicio.AhorcadoServicio;
 
 
@@ -34,12 +34,10 @@ public class EjercicioExtra2Guia9 {
     public static void main(String[] args) {
        
         AhorcadoServicio as = new AhorcadoServicio();
-        Ahorcado ahorcado = new Ahorcado();
+       // Ahorcado ahorcado = new Ahorcado();
         
         
-        as.crearJuego();
-        as.buscar();
-        
+        as.juego();
         
     }
     
